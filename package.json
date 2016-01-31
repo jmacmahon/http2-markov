@@ -1,0 +1,22 @@
+{
+  "name": "http2-markov",
+  "version": "0.0.1-dev",
+  "description": "HTTP/2 server push optimisation using Markov chains",
+  "author": "Joe MacMahon <joe@macmahon.eu>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jmacmahon/http2-markov"
+  },
+  "bugs": {
+    "url": "https://github.com/jmacmahon/http2-markov/issues"
+  },
+  "keywords": [],
+  "dependencies": {
+    "finalhandler": "~0.4",
+    "http2": "~3",
+    "router": "~1"
+  },
+  "devDependencies": {},
+  "private": true,
+  "license": "AGPL"
+}
