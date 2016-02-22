@@ -15,6 +15,7 @@
     "finalhandler": "~0.4",
     "http2": "~3",
     "morgan": "~1",
+    "on-finished": "~2",
     "router": "~1",
     "serve-static": "~1"
   },
