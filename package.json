@@ -19,7 +19,13 @@
     "router": "~1",
     "serve-static": "~1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5"
+  },
   "private": true,
-  "license": "AGPL"
+  "license": "AGPL",
+  "scripts": {
+    "test": "node_modules/.bin/mocha"
+  }
 }
