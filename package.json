@@ -17,7 +17,8 @@
     "morgan": "~1",
     "on-finished": "~2",
     "router": "~1",
-    "serve-static": "~1"
+    "serve-static": "~1",
+    "underscore": "^1.8.3"
   },
   "devDependencies": {
     "chai": "^3.5.0",
