@@ -12,6 +12,7 @@
   },
   "keywords": [],
   "dependencies": {
+    "express-session": "^1.13.0",
     "finalhandler": "~0.4",
     "http2": "~3",
     "morgan": "~1",
