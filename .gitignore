@@ -1,5 +1,9 @@
+# Scratch file
+lib/scratch.js
+
 # Logs
 logs
+log
 *.log
 npm-debug.log*
 
