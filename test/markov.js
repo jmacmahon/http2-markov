@@ -7,12 +7,12 @@ describe('markov', function () {
   describe('Static', function () {
     it('should throw an error when no probabilities argument is passed', function () {
       (function () {
-        var s = markov.Static();
+        var s = new markov.Static();
       }).should.throw(TypeError, 'Need to provide argument: probabilities');
     });
     describe('after', function () {
       it('should throw an error when no before argument is passed', function () {
-        var s = markov.Static({});
+        var s = new markov.Static({});
         (function () {
           s.after();
         }).should.throw(TypeError, 'Need to provide argument: before');
@@ -42,7 +42,7 @@ describe('markov', function () {
       ];
       tests.forEach(function (test) {
         describe('probabilities = ' + JSON.stringify(test.probabilities), function () {
-          var s = markov.Static(test.probabilities);
+          var s = new markov.Static(test.probabilities);
           test.cases.forEach(function (case_) {
             it('should return ' + case_.after + ' after ' + case_.before + '; rand = ' + case_.rand, function () {
               s.after(case_.before, case_.rand).should.equal(case_.after);
@@ -52,7 +52,7 @@ describe('markov', function () {
       });
     });
     describe('chain', function () {
-      var s = markov.Static({'a': {'a': 0.3, 'b': 0.7}, 'b': {'a': 0.7, 'b': 0.3}});
+      var s = new markov.Static({'a': {'a': 0.3, 'b': 0.7}, 'b': {'a': 0.7, 'b': 0.3}});
       it('should return an array of the correct length', function () {
         s.chain('a', 20).should.have.property('length', 20);
       });
@@ -63,13 +63,13 @@ describe('markov', function () {
   });
   describe('Dynamic', function () {
     it('should use a default trainingData object when no argument is passed', function () {
-      var d = markov.Dynamic();
+      var d = new markov.Dynamic();
       should.exist(d.trainingData);
       d.trainingData.should.deep.equal({});
     });
     describe('after', function () {
       it('should throw an error when no before argument is passed', function () {
-        var d = markov.Dynamic({});
+        var d = new markov.Dynamic({});
         (function () {
           d.after();
         }).should.throw(TypeError, 'Need to provide argument: before');
@@ -78,7 +78,7 @@ describe('markov', function () {
     describe('trainOne', function () {
       var d;
       beforeEach(function () {
-        d = markov.Dynamic({});
+        d = new markov.Dynamic({});
       });
       it('should throw an error when no before or after arguments are passed', function () {
         (function () {
@@ -106,7 +106,7 @@ describe('markov', function () {
       // TODO
     });
     describe('chain', function () {
-      var d = markov.Dynamic({
+      var d = new markov.Dynamic({
         'a': {
           total: 10,
           counts: {'a': 3, 'b': 7},
@@ -123,7 +123,7 @@ describe('markov', function () {
         d.chain('a', 500).should.contain('a').and.contain('b');
       });
       it('should handle terminating items correctly', function () {
-        d = markov.Dynamic({
+        d = new markov.Dynamic({
           'a': {
             total: 1,
             counts: {'b': 1},
