@@ -2,7 +2,7 @@ var chai = require('chai');
 var should = chai.should();
 var assert = chai.assert;
 
-var markov = require('../lib/markov');
+var markov = require('../lib/algorithms/markov');
 describe('markov', function () {
   describe('Static', function () {
     it('should throw an error when no probabilities argument is passed', function () {
